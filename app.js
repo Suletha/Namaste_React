@@ -70,7 +70,8 @@ const ReactComp2 = () => (
         {data}
         {<h1>{name}</h1>}
         {jsxHeading1}                                     
-        <ReactComp/>
+        <ReactComp></ReactComp>
+        {ReactComp()}
         <h1 className="heading">Its a component Composition</h1>
 
     </div>
