@@ -40,8 +40,14 @@ const jsxHeading = <h1 id="parent">This is React Element using JSX--simlified co
 
 // multiple lines---> use ()
 
-const jsxHeading1 = (<h1 id="parent">
-    This is React Element using JSX--simlified code</h1>)
+const jsxHeading1 = (
+    <div>
+        <h1 id="parent">This is React Element inside another element</h1>
+        {jsxHeading}
+
+    </div>
+
+)
 
     
 // console.log(jsxHeading)
@@ -58,7 +64,7 @@ const ReactComp = () => {
 //Component composition(one comp inside another)
 const ReactComp2 = () => ( 
     <div>
-        {jsxHeading}
+        {jsxHeading1}                                     
         <ReactComp/>
         <h1 className="heading">Its a component Composition</h1>
 
