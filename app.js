@@ -61,9 +61,14 @@ const ReactComp = () => {
     return <h1 className="heading">Its a Functional component</h1>
 }
 
+
+const data = 1000;
+const name = "sulethaGopi"
 //Component composition(one comp inside another)
 const ReactComp2 = () => ( 
     <div>
+        {data}
+        {<h1>{name}</h1>}
         {jsxHeading1}                                     
         <ReactComp/>
         <h1 className="heading">Its a component Composition</h1>
