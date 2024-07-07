@@ -55,7 +55,15 @@ const ReactComp = () => {
     return <h1 className="heading">Its a Functional component</h1>
 }
 
-const ReactComp2 = () => ( <h1 className="heading">Its a Functional component</h1>
+//Component composition(one comp inside another)
+const ReactComp2 = () => ( 
+    <div>
+        <ReactComp/>
+        <h1 className="heading">Its a Functional component Composition</h1>
+
+    </div>
+
+
 
 )
 
@@ -64,6 +72,6 @@ const ReactComp2 = () => ( <h1 className="heading">Its a Functional component</h
 
 //const heading = React.createElement("h1",{id:"heading"},"Hello World from React!")
 const root = ReactDOM.createRoot(document.getElementById("divEle"));
-root.render(<ReactComp/>)
+root.render(<ReactComp2/>)
        
     
