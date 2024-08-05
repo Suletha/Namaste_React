@@ -1,90 +1,80 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+// header
+//logo-nav_items
+//body
+//restaurent_container
 
-// {/* <div id="parent">
-//     <div id="child1">
-//         <h1>Im h1 tag</h1>
-//         <h2>Im sibiling of h1</h2>
-//     </div>
-//     <div id="child2">
-//         <h1>Im h1 tag</h1>
-//         <h2>Im sibiling of h1</h2>
-//     </div>
-// </div> */}
+const Header = () =>{
+    return(
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo"  src="https://seeklogo.com/images/F/food-logo-59E5A73AFD-seeklogo.com.png"  />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
 
-// React.createElement --> object---> converted to HTML(when rendered)
+const ResCard = (props) => {
+    console.log(props)
+    return(
+        <div className="res-card">
+            <img className="res-img" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/slheenytwb3iaypqf4yd"/>
+            <div className="res-details">
+            <h2>{props.resName}</h2>
+            <h5>{props.catagory}</h5>
+            <h5>{props.cuisine}</h5>
+            <div className="rating">
+                <h6>{props.rating}</h6>
+                <img className="rat-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxQ8HybrVN6zjwN1JbQbDAEMHwDIEaXb4wmCWU0aoJbnMDO_UJhSMlky6MqmBoL7U6qhY&usqp=CAU"/>
+                
+            </div>
+                
+            </div>
+            
+        </div>
+    )
+}
 
-// const parent = React.createElement("div",{id:"parent"},[
-//     React.createElement("div",{id:"child1"},
-//         [
-//         React.createElement("h1",{},"Im h1 tag"),
-//         React.createElement("h2",{},"sibiling of h1")
-//         ]
-//     ),
-//     React.createElement("div",{id:"child2"},
-//         [
-//         React.createElement("h1",{},"Im h1 tag"),
-//         React.createElement("h2",{},"sibiling of h1")
-//         ],
-//     )
+const Body = () =>{
+    return(
+        <div className="body"> 
+            <div className="search_bar"> Search</div>
+            <div className="res-container">
+                <ResCard resName="RR Salem" catagory="Biryani, Non-Veg" cuisine="North Indian" rating="4.6"></ResCard>
+                <ResCard resName="Thalapakattu" catagory="Biryani, Non-Veg" cuisine="North Indian" rating="4.0"></ResCard>
+                <ResCard resName="A2B" catagory="Dosa, Veg" cuisine="South Indian" rating="4.1"></ResCard>
+                <ResCard resName="Sangeetha" catagory="Pongal, Veg" cuisine="South Indian" rating="4.4"></ResCard>
+                
+                
+            </div>
 
-// ])
+        </div>
+        
+    )
+}
 
+const AppComp = () =>{
+    return(
+        <div className="app">
+            <Header/>
+            <Body></Body>
+        </div>
 
-
-// JSX ---> React.createElement---> object---> converted to HTML(when rendered)===>JSX is converted to HTML by Paecel(Babel)
-// JSX-->HTML like syntax not HTML in Js 
-//React Element
-const jsxHeading = <h1 id="parent">This is React Element using JSX--simlified code</h1>
-
-// multiple lines---> use ()
-
-const jsxHeading1 = (
-    <div>
-        <h1 id="parent">This is React Element inside another element</h1>
-        {jsxHeading}
-
-    </div>
-
-)
-
-    
-// console.log(jsxHeading)
-// //const heading = React.createElement("h1",{id:"heading"},"Hello World from React!")
-// const root = ReactDOM.createRoot(document.getElementById("divEle"));
-// root.render(jsxHeading)
-       
-
-//React Functional component
-const ReactComp = () => {
-    return <h1 className="heading">Its a Functional component</h1>
+    )
 }
 
 
-const data = 1000;
-const name = "sulethaGopi"
-//Component composition(one comp inside another)
-const ReactComp2 = () => ( 
-    <div>
-        {data}
-        {<h1>{name}</h1>}
-        {jsxHeading1}                                     
-        <ReactComp></ReactComp>
-        {ReactComp()}
-        <h1 className="heading">Its a component Composition</h1>
-
-    </div>
-
-
-
-)
-
- 
-
-
-//const heading = React.createElement("h1",{id:"heading"},"Hello World from React!")
 const root = ReactDOM.createRoot(document.getElementById("divEle"));
-root.render(<ReactComp2/>)
+root.render(<AppComp/>)
        
     
