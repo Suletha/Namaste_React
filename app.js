@@ -24,9 +24,9 @@ const Header = () =>{
     )
 }
 
-const ResCard = (props) => {
-    const { resName, catagory, cuisine, rating } = props;
-    console.log(props)
+const ResCard = ({ resName, catagory, cuisine, rating }) => {
+    // const { resName, catagory, cuisine, rating } = props;
+    //console.log(props)
     return(
         <div className="res-card">
             <img className="res-img" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/slheenytwb3iaypqf4yd"/>
