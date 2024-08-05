@@ -25,16 +25,17 @@ const Header = () =>{
 }
 
 const ResCard = (props) => {
+    const { resName, catagory, cuisine, rating } = props;
     console.log(props)
     return(
         <div className="res-card">
             <img className="res-img" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/slheenytwb3iaypqf4yd"/>
             <div className="res-details">
-            <h2>{props.resName}</h2>
-            <h5>{props.catagory}</h5>
-            <h5>{props.cuisine}</h5>
+            <h2>{resName}</h2>
+            <h5>{catagory}</h5>
+            <h5>{cuisine}</h5>
             <div className="rating">
-                <h6>{props.rating}</h6>
+                <h6>{rating}</h6>
                 <img className="rat-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxQ8HybrVN6zjwN1JbQbDAEMHwDIEaXb4wmCWU0aoJbnMDO_UJhSMlky6MqmBoL7U6qhY&usqp=CAU"/>
                 
             </div>
