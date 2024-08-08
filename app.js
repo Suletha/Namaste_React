@@ -21,7 +21,7 @@ const Header = () => {
 
 const ResCard = (props) => {
     const { resData } = props;
-    const { info } = resData;  // Extract the info object from resData
+    // const { info } = resData;  // Extract the info object from resData
     return (
         <div className="res-card">
             <img 
@@ -30,10 +30,10 @@ const ResCard = (props) => {
                 alt="restaurant" 
             />
             <div className="res-details">
-                <h2>{info.name}</h2>
-                <h5>{info.cuisines.join(', ')}</h5> {/* Joining array elements with a comma */}
-                <h5>{info.avgRating}</h5>
-                <h5>{info.costForTwo}</h5>
+                <h2>{resData.info.name}</h2>
+                <h5>{resData.info.cuisines.join(', ')}</h5> {/* Joining array elements with a comma */}
+                <h5>{resData.info.avgRating}</h5>
+                <h5>{resData.info.costForTwo}</h5>
             </div>
         </div>
     );
